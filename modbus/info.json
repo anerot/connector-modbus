@@ -1,0 +1,701 @@
+{
+    "name": "modbus",
+    "version": "1.0.0",
+    "label": "Modbus",
+    "description": "Modbus connector integrates the Python Library pymodbus. \nWith this connector you can interact with OT devices supporting Modbus.\nIt implements:\nREAD_COILS (0x01)=Func01\nREAD_DISCRETE_INPUTS (0x02)=Func02\nREAD_HOLDING_REGISTERS (0x03)=Func03\nREAD_INPUT_REGISTERS (0x04)=Func4\nWRITE_SINGLE_COIL (0x05)=Func05\nWRITE_SINGLE_REGISTER (0x06)=Func06\nWRITE_MULTIPLE_COILS (0x0F)=Func15\nWRITE_MULTIPLE_REGISTERS (0x10)=Func16\nWRITE_READ_MULTIPLE_REGISTERS (0x17)=Func23\nRead Device Information (0x2B/0x0E)=Func43\n\nbut also tools like:\nScan a Modbus device for slave devices\nConvert registers to string\nConvert registers to int32",
+    "publisher": "ArnaudN",
+    "icon_small_name": {
+        "name": {
+            "name": "",
+            "content": ""
+        },
+        "content": ""
+    },
+    "icon_large_name": {
+        "name": {
+            "name": "",
+            "content": ""
+        },
+        "content": ""
+    },
+    "category": [
+        "OT & IoT Security"
+    ],
+    "configuration": {
+        "fields": []
+    },
+    "operations": [
+        {
+            "title": "Read Coils",
+            "operation": "readcoils",
+            "description": "Read Discrete Outputs/Coils\nREAD_COILS (0x01)=Func01",
+            "parameters": [
+                {
+                    "title": "Host/IPaddress",
+                    "type": "text",
+                    "name": "host",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "host/IPaddress"
+                },
+                {
+                    "title": "port",
+                    "type": "integer",
+                    "name": "port",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 502
+                },
+                {
+                    "title": "unitId",
+                    "type": "integer",
+                    "name": "unitId",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 255
+                },
+                {
+                    "title": "bit address",
+                    "type": "integer",
+                    "name": "bitAddress",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 0,
+                    "tooltip": "memory address to read the bit"
+                },
+                {
+                    "title": "bit count",
+                    "type": "integer",
+                    "name": "bitcount",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1,
+                    "tooltip": "number of bits to read"
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        },
+        {
+            "title": "Read Discrete Inputs",
+            "operation": "readdiscreteinputs",
+            "description": "Read Discrete Inputs. Read-Only Bits\nREAD_DISCRETE_INPUTS (0x02)=Func02",
+            "parameters": [
+                {
+                    "title": "Host/IPaddress",
+                    "type": "text",
+                    "name": "host",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "host/IPaddress"
+                },
+                {
+                    "title": "port",
+                    "type": "integer",
+                    "name": "port",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 502
+                },
+                {
+                    "title": "unitId",
+                    "type": "integer",
+                    "name": "unitId",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 255
+                },
+                {
+                    "title": "bit address",
+                    "type": "integer",
+                    "name": "bitAddress",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 0,
+                    "tooltip": "memory address to read the bit"
+                },
+                {
+                    "title": "bit count",
+                    "type": "integer",
+                    "name": "bitcount",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1,
+                    "tooltip": "number of bits to read"
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        },
+        {
+            "title": "Read Holding Register",
+            "operation": "readholding",
+            "description": "Read a modbus value\nREAD_HOLDING_REGISTERS (0x03)=Func03",
+            "parameters": [
+                {
+                    "title": "Host/IPaddress",
+                    "type": "text",
+                    "name": "host",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "host/IPaddress"
+                },
+                {
+                    "title": "port",
+                    "type": "integer",
+                    "name": "port",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 502
+                },
+                {
+                    "title": "unitId",
+                    "type": "integer",
+                    "name": "unitId",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1
+                },
+                {
+                    "title": "modbusAddress",
+                    "type": "integer",
+                    "name": "address",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 0,
+                    "tooltip": "memory address to read the register"
+                },
+                {
+                    "title": "registerCount",
+                    "type": "integer",
+                    "name": "registerCount",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1,
+                    "tooltip": "number of registers to read"
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        },
+        {
+            "title": "Read Input Register",
+            "operation": "readinput",
+            "description": "Read an Input Register (read_only) value\nREAD_INPUT_REGISTERS (0x04)=Func04",
+            "parameters": [
+                {
+                    "title": "Host/IPaddress",
+                    "type": "text",
+                    "name": "host",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "host/IPaddress"
+                },
+                {
+                    "title": "port",
+                    "type": "integer",
+                    "name": "port",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 502
+                },
+                {
+                    "title": "unitId",
+                    "type": "integer",
+                    "name": "unitId",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1
+                },
+                {
+                    "title": "modbusAddress",
+                    "type": "integer",
+                    "name": "address",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 0,
+                    "tooltip": "memory address to read the register"
+                },
+                {
+                    "title": "registerCount",
+                    "type": "integer",
+                    "name": "registerCount",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1,
+                    "tooltip": "number of registers to read"
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        },
+        {
+            "title": "Write Coils",
+            "operation": "writecoils",
+            "description": "Write single or Multiple Coils\nWRITE_SINGLE_COIL (0x05)=Func05\nWRITE_MULTIPLE_COILS (0x0F)=Func15",
+            "parameters": [
+                {
+                    "title": "Host/IPaddress",
+                    "type": "text",
+                    "name": "host",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "host/IPaddress"
+                },
+                {
+                    "title": "port",
+                    "type": "integer",
+                    "name": "port",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 502
+                },
+                {
+                    "title": "unitId",
+                    "type": "integer",
+                    "name": "unitId",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1
+                },
+                {
+                    "title": "bit address",
+                    "type": "integer",
+                    "name": "bitAddress",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 0,
+                    "tooltip": "memory address to write the bit(s)"
+                },
+                {
+                    "title": "value",
+                    "type": "object",
+                    "name": "value",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "[\"true\", \"1\", \"yes\", \"on\"] or false"
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        },
+        {
+            "title": "Write Multiple Coils",
+            "operation": "writemultiplecoils",
+            "description": "Explicitly Write Multiple Coils\nWRITE_MULTIPLE_COILS (0x0F)=Func15",
+            "parameters": [
+                {
+                    "title": "Host/IPaddress",
+                    "type": "text",
+                    "name": "host",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "host/IPaddress"
+                },
+                {
+                    "title": "port",
+                    "type": "integer",
+                    "name": "port",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 502
+                },
+                {
+                    "title": "unitId",
+                    "type": "integer",
+                    "name": "unitId",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1
+                },
+                {
+                    "title": "bit address",
+                    "type": "integer",
+                    "name": "bitAddress",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 0,
+                    "tooltip": "memory address to write the bits"
+                },
+                {
+                    "title": "value",
+                    "type": "object",
+                    "name": "value",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "[\"true\", \"0\", \"yes\", \"off\"]"
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        },
+        {
+            "title": "Write Register",
+            "operation": "writeregister",
+            "description": "Write Multiple or Single Register at mobus address\nWRITE_MULTIPLE_REGISTERS (0x10)=Func16\nWRITE_SINGLE_REGISTER (0x06)=Func06",
+            "parameters": [
+                {
+                    "title": "Host/IPaddress",
+                    "type": "text",
+                    "name": "host",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "host/IPaddress"
+                },
+                {
+                    "title": "port",
+                    "type": "integer",
+                    "name": "port",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 502
+                },
+                {
+                    "title": "unitId",
+                    "type": "integer",
+                    "name": "unitId",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1
+                },
+                {
+                    "title": "modbusAddress",
+                    "type": "integer",
+                    "name": "address",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 0,
+                    "tooltip": "modbus address"
+                },
+                {
+                    "title": "value",
+                    "type": "object",
+                    "name": "value",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "[11,22] or \"33,44\" or 55"
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        },
+        {
+            "title": "Write Read Multiple Registers",
+            "operation": "writeread",
+            "description": "Write Read multiple registers\nWRITE_READ_MULTIPLE_REGISTERS (0x17)=Func23",
+            "parameters": [
+                {
+                    "title": "Host/IPaddress",
+                    "type": "text",
+                    "name": "host",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "host/IPaddress"
+                },
+                {
+                    "title": "port",
+                    "type": "integer",
+                    "name": "port",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 502
+                },
+                {
+                    "title": "unitId",
+                    "type": "integer",
+                    "name": "unitId",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1
+                },
+                {
+                    "title": "writeAddress",
+                    "type": "integer",
+                    "name": "writeAddress",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 0,
+                    "tooltip": "memory address to write the register"
+                },
+                {
+                    "title": "writeValues",
+                    "type": "object",
+                    "name": "writeValues",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "[11,22] or \"33,44\""
+                },
+                {
+                    "title": "readAddress",
+                    "type": "integer",
+                    "name": "readAddress",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 0,
+                    "tooltip": "memory address to read the register"
+                },
+                {
+                    "title": "readNb",
+                    "type": "integer",
+                    "name": "readNb",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1,
+                    "tooltip": "number of registers to read"
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        },
+        {
+            "title": "Read Device Information",
+            "operation": "read_device_information",
+            "description": "Modbus function Read Device Information (0x2B/0x0E)",
+            "parameters": [
+                {
+                    "title": "Host/IPaddress",
+                    "type": "text",
+                    "name": "host",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": ""
+                },
+                {
+                    "title": "port",
+                    "type": "integer",
+                    "name": "port",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 502
+                },
+                {
+                    "title": "unitId",
+                    "type": "integer",
+                    "name": "unitId",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1
+                },
+                {
+                    "title": "readCode",
+                    "type": "integer",
+                    "name": "readCode",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1,
+                    "tooltip": "# Read Device ID code (MEI type)\n# 1: Basic identification (VendorName, ProductCode, MajorMinorRevision)\n# 2: Regular identification (optional parameters)\n# 3: Extended identification\n# 4: Specific object identification"
+                },
+                {
+                    "title": "objectId",
+                    "type": "integer",
+                    "name": "objectId",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1,
+                    "tooltip": ""
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        },
+        {
+            "title": "Scan for Units",
+            "operation": "scan_units",
+            "description": "Scan a Modbus TCP gateway to discover active slave/device Unit IDs.",
+            "parameters": [
+                {
+                    "title": "Host/IPaddress",
+                    "type": "text",
+                    "name": "host",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "host/IPaddress"
+                },
+                {
+                    "title": "port",
+                    "type": "integer",
+                    "name": "port",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 502
+                },
+                {
+                    "title": "timeout",
+                    "type": "text",
+                    "name": "timeout",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "0.5"
+                },
+                {
+                    "title": "Test Address",
+                    "type": "integer",
+                    "name": "testAddress",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": 0,
+                    "tooltip": "register address to use for scan"
+                },
+                {
+                    "title": "Scan Type",
+                    "type": "select",
+                    "name": "scan_type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "Gateway",
+                    "tooltip": "Select the Scan type for the Device check. Gateway will ask for a unit_id range where host will focus on a unique unit_id.",
+                    "options": [
+                        "Gateway",
+                        "Host"
+                    ],
+                    "onchange": {
+                        "Gateway": [
+                            {
+                                "title": "startId",
+                                "type": "integer",
+                                "name": "startId",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "value": 1
+                            },
+                            {
+                                "title": "endId",
+                                "type": "integer",
+                                "name": "endId",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "value": 247
+                            }
+                        ],
+                        "Host": [
+                            {
+                                "title": "unitId",
+                                "type": "integer",
+                                "name": "unitId",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "value": 255
+                            }
+                        ]
+                    }
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        },
+        {
+            "title": "Convert to string",
+            "operation": "convert_to_string",
+            "description": "Convert a list of 16-bit Modbus registers into a clean ASCII string",
+            "parameters": [
+                {
+                    "title": "registers",
+                    "type": "text",
+                    "name": "registers",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": ""
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        },
+        {
+            "title": "Convert to int32",
+            "operation": "convert_to_int32",
+            "description": "Convert two 16-bit Modbus registers into a signed 32-bit integer (int32).",
+            "parameters": [
+                {
+                    "title": "registers",
+                    "type": "text",
+                    "name": "registers",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "Expects Big-Endian register ordering (MSW, LSW) ie:[9277,30313]"
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        }
+    ],
+    "contributor": "ArnaudN",
+    "active": true,
+    "cs_compatible": true,
+    "system": false,
+    "playbook_collections": [],
+    "icon_small": "",
+    "icon_large": "",
+    "help_online": null,
+    "vendor_version": null
+}
