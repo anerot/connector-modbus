@@ -1,0 +1,3 @@
+# Add Python Dependencies
+--extra-index-url=https://pypi.org/simple
+pymodbus>=3.8.0
