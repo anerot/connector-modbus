@@ -1,0 +1,872 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Modbus - 1.0.0",
+      "description": "Sample playbooks for \"Modbus\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": null,
+      "uuid": "61a5c2df-3dc9-4fcf-a75e-6ca0c6ac3574",
+      "id": 106,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [
+        "modbus"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Write Multiple Coils",
+          "aliasName": null,
+          "tag": null,
+          "description": "Explicitly Write Multiple Coils WRITE_MULTIPLE_COILS (0x0F)=Func15",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1791391482,
+          "collection": "/api/3/workflow_collections/61a5c2df-3dc9-4fcf-a75e-6ca0c6ac3574",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/69e14104-4c19-44f2-a5c4-af6122335816",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "69e14104-4c19-44f2-a5c4-af6122335816"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Write Multiple Coils",
+              "description": null,
+              "arguments": {
+                "name": "modbus",
+                "config": "7433ee69-ec0b-4f28-9439-5973cd85632e",
+                "params": {
+                  "host": "",
+                  "port": 502,
+                  "value": "",
+                  "unitId": 1,
+                  "bitAddress": 0
+                },
+                "version": "1.0.0",
+                "connector": "modbus",
+                "operation": "writemultiplecoils",
+                "operationTitle": "Write Multiple Coils",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "3288617e-7ae0-46d6-a0eb-15921b5ad979"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Read Coils",
+              "targetStep": "/api/3/workflow_steps/3288617e-7ae0-46d6-a0eb-15921b5ad979",
+              "sourceStep": "/api/3/workflow_steps/69e14104-4c19-44f2-a5c4-af6122335816",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "18cefc23-cde3-46dc-b479-72c49d65027f"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "3fd09ef3-3e63-40c1-aafd-77b1f50a308f",
+          "id": 1064,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "modbus"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Write Register",
+          "aliasName": null,
+          "tag": null,
+          "description": "Write Multiple or Single Register at mobus address WRITE_MULTIPLE_REGISTERS (0x10)=Func16 WRITE_SINGLE_REGISTER (0x06)=Func06",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1791391475,
+          "collection": "/api/3/workflow_collections/61a5c2df-3dc9-4fcf-a75e-6ca0c6ac3574",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/8bf1fa78-8219-43aa-b4e9-e6ee93adab85",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "8bf1fa78-8219-43aa-b4e9-e6ee93adab85"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Write Register",
+              "description": null,
+              "arguments": {
+                "name": "modbus",
+                "config": "7433ee69-ec0b-4f28-9439-5973cd85632e",
+                "params": {
+                  "host": "",
+                  "port": 502,
+                  "value": "",
+                  "unitId": 1,
+                  "address": 0
+                },
+                "version": "1.0.0",
+                "connector": "modbus",
+                "operation": "writeregister",
+                "operationTitle": "Write Register",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "c7f06290-fb8e-4944-9f86-7848b09ed385"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Read Coils",
+              "targetStep": "/api/3/workflow_steps/c7f06290-fb8e-4944-9f86-7848b09ed385",
+              "sourceStep": "/api/3/workflow_steps/8bf1fa78-8219-43aa-b4e9-e6ee93adab85",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "6317544d-b315-4211-a8a9-ba31b5716f03"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "4a3dfeff-8a5a-4cb1-bd95-d207a13fb99f",
+          "id": 1065,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "modbus"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Read Coils",
+          "aliasName": null,
+          "tag": null,
+          "description": "Read Discrete Outputs/Coils READ_COILS (0x01)=Func01",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1791391468,
+          "collection": "/api/3/workflow_collections/61a5c2df-3dc9-4fcf-a75e-6ca0c6ac3574",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/edb22dc9-ea9a-42b5-bf7b-714f69e48507",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Read Coils",
+              "description": null,
+              "arguments": {
+                "name": "modbus",
+                "config": "7433ee69-ec0b-4f28-9439-5973cd85632e",
+                "params": {
+                  "host": "",
+                  "port": 502,
+                  "unitId": 255,
+                  "bitcount": 1,
+                  "bitAddress": 0
+                },
+                "version": "1.0.0",
+                "connector": "modbus",
+                "operation": "readcoils",
+                "operationTitle": "Read Coils",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "e6bca56c-5d5b-4267-9b78-f967246e7221"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "edb22dc9-ea9a-42b5-bf7b-714f69e48507"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Read Coils",
+              "targetStep": "/api/3/workflow_steps/e6bca56c-5d5b-4267-9b78-f967246e7221",
+              "sourceStep": "/api/3/workflow_steps/edb22dc9-ea9a-42b5-bf7b-714f69e48507",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "86d20318-0ee9-4d1b-8fed-44c975c41594"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "4ed539be-cc7a-4299-b7cf-6875100f287e",
+          "id": 1066,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "modbus"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Read Device Information",
+          "aliasName": null,
+          "tag": null,
+          "description": "Modbus function Read Device Information (0x2B/0x0E)",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1791391462,
+          "collection": "/api/3/workflow_collections/61a5c2df-3dc9-4fcf-a75e-6ca0c6ac3574",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/af58eb41-bdf4-45b8-8333-30ce18ed0fb3",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Read Device Information",
+              "description": null,
+              "arguments": {
+                "name": "modbus",
+                "config": "7433ee69-ec0b-4f28-9439-5973cd85632e",
+                "params": {
+                  "host": "",
+                  "port": 502,
+                  "unitId": 1,
+                  "objectId": 1,
+                  "readCode": 1
+                },
+                "version": "1.0.0",
+                "connector": "modbus",
+                "operation": "read_device_information",
+                "operationTitle": "Read Device Information",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "48c63453-e449-4695-9b72-065f0d56de92"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "af58eb41-bdf4-45b8-8333-30ce18ed0fb3"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Read Coils",
+              "targetStep": "/api/3/workflow_steps/48c63453-e449-4695-9b72-065f0d56de92",
+              "sourceStep": "/api/3/workflow_steps/af58eb41-bdf4-45b8-8333-30ce18ed0fb3",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "86e0c0ca-fa2a-4aa8-bbc6-fe6935161c44"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "7b4b8e05-5da7-463a-be48-46ee1423fde2",
+          "id": 1067,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "modbus"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Read Holding Register",
+          "aliasName": null,
+          "tag": null,
+          "description": "Read a modbus value READ_HOLDING_REGISTERS (0x03)=Func03",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1791391456,
+          "collection": "/api/3/workflow_collections/61a5c2df-3dc9-4fcf-a75e-6ca0c6ac3574",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/68da8a33-7705-413e-9e9c-fb568c87b45c",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Read Holding Register",
+              "description": null,
+              "arguments": {
+                "name": "modbus",
+                "config": "7433ee69-ec0b-4f28-9439-5973cd85632e",
+                "params": {
+                  "host": "",
+                  "port": 502,
+                  "unitId": 1,
+                  "address": 0,
+                  "registerCount": 1
+                },
+                "version": "1.0.0",
+                "connector": "modbus",
+                "operation": "readholding",
+                "operationTitle": "Read Holding Register",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "cdf8a600-544c-440f-8688-d693a3d715c3"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "68da8a33-7705-413e-9e9c-fb568c87b45c"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Read Coils",
+              "targetStep": "/api/3/workflow_steps/cdf8a600-544c-440f-8688-d693a3d715c3",
+              "sourceStep": "/api/3/workflow_steps/68da8a33-7705-413e-9e9c-fb568c87b45c",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "98362ab1-202f-4fed-a4ca-31d465690f75"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "835d30fb-feb0-4265-b91c-812c59492546",
+          "id": 1068,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "modbus"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Write Read Multiple Register",
+          "aliasName": null,
+          "tag": null,
+          "description": "Write Read multiple registers WRITE_READ_MULTIPLE_REGISTERS (0x17)=Func23",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1791391450,
+          "collection": "/api/3/workflow_collections/61a5c2df-3dc9-4fcf-a75e-6ca0c6ac3574",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/73540c3c-2dce-4a57-a262-6255a00e2219",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "73540c3c-2dce-4a57-a262-6255a00e2219"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Write Read Multiple Register",
+              "description": null,
+              "arguments": {
+                "name": "modbus",
+                "config": "7433ee69-ec0b-4f28-9439-5973cd85632e",
+                "params": {
+                  "host": "",
+                  "port": 502,
+                  "readNb": 1,
+                  "unitId": 1,
+                  "readAddress": 0,
+                  "writeValues": "",
+                  "writeAddress": 0
+                },
+                "version": "1.0.0",
+                "connector": "modbus",
+                "operation": "writeread",
+                "operationTitle": "Write Read Multiple Registers",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "3ef06674-cd04-4deb-9cb9-4b58646663b4"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Read Coils",
+              "targetStep": "/api/3/workflow_steps/3ef06674-cd04-4deb-9cb9-4b58646663b4",
+              "sourceStep": "/api/3/workflow_steps/73540c3c-2dce-4a57-a262-6255a00e2219",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "f748b06e-547f-489b-b450-e8a812c46a48"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "ba65ca22-0126-475d-ad24-8d155bbda2b6",
+          "id": 1069,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "modbus"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Read Discrete Inputs",
+          "aliasName": null,
+          "tag": null,
+          "description": "Read Discrete Inputs. Read-Only Bits READ_DISCRETE_INPUTS (0x02)=Func02",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1791391426,
+          "collection": "/api/3/workflow_collections/61a5c2df-3dc9-4fcf-a75e-6ca0c6ac3574",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/7327cbc8-534a-445c-aca5-4e6348abe117",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Read Discrete Inputs",
+              "description": null,
+              "arguments": {
+                "name": "modbus",
+                "config": "7433ee69-ec0b-4f28-9439-5973cd85632e",
+                "params": {
+                  "host": "",
+                  "port": 502,
+                  "unitId": 255,
+                  "bitcount": 1,
+                  "bitAddress": 0
+                },
+                "version": "1.0.0",
+                "connector": "modbus",
+                "operation": "readdiscreteinputs",
+                "operationTitle": "Read Discrete Inputs",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "aaff8527-5316-4853-abc1-e2ef14eec5d2"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "7327cbc8-534a-445c-aca5-4e6348abe117"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Read Coils",
+              "targetStep": "/api/3/workflow_steps/aaff8527-5316-4853-abc1-e2ef14eec5d2",
+              "sourceStep": "/api/3/workflow_steps/7327cbc8-534a-445c-aca5-4e6348abe117",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "9cb186ae-053a-4c52-b63d-77f2135c2aa3"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "bbf410fc-a108-4ad5-a8df-d7020cb8bcde",
+          "id": 1070,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "modbus"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Write Coils",
+          "aliasName": null,
+          "tag": null,
+          "description": "Write single or Multiple Coils WRITE_SINGLE_COIL (0x05)=Func05 WRITE_MULTIPLE_COILS (0x0F)=Func15",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1791391374,
+          "collection": "/api/3/workflow_collections/61a5c2df-3dc9-4fcf-a75e-6ca0c6ac3574",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/eb577e0b-017e-428a-8e94-3f610aaac0d6",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "eb577e0b-017e-428a-8e94-3f610aaac0d6"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Write Coils",
+              "description": null,
+              "arguments": {
+                "name": "modbus",
+                "config": "7433ee69-ec0b-4f28-9439-5973cd85632e",
+                "params": {
+                  "host": "",
+                  "port": 502,
+                  "value": "",
+                  "unitId": 1,
+                  "bitAddress": 0
+                },
+                "version": "1.0.0",
+                "connector": "modbus",
+                "operation": "writecoils",
+                "operationTitle": "Write Coils",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "f18cfcbc-98d4-4dca-9080-168b7ee3d211"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Read Coils",
+              "targetStep": "/api/3/workflow_steps/f18cfcbc-98d4-4dca-9080-168b7ee3d211",
+              "sourceStep": "/api/3/workflow_steps/eb577e0b-017e-428a-8e94-3f610aaac0d6",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "0bf416d7-a991-4406-8c18-852cd206bef8"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "f0e9e733-4d1f-4574-8e54-be473b05ba1c",
+          "id": 1071,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "modbus"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Read Input Register",
+          "aliasName": null,
+          "tag": null,
+          "description": "Read an Input Register (read_only) value READ_INPUT_REGISTERS (0x04)=Func04",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1791391364,
+          "collection": "/api/3/workflow_collections/61a5c2df-3dc9-4fcf-a75e-6ca0c6ac3574",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/88469a31-5773-4336-a5d5-6219f39d9896",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Read Input Register",
+              "description": null,
+              "arguments": {
+                "name": "modbus",
+                "config": "7433ee69-ec0b-4f28-9439-5973cd85632e",
+                "params": {
+                  "host": "",
+                  "port": 502,
+                  "unitId": 1,
+                  "address": 0,
+                  "registerCount": 1
+                },
+                "version": "1.0.0",
+                "connector": "modbus",
+                "operation": "readinput",
+                "operationTitle": "Read Input Register",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "22340f3d-b5f5-477f-8fb8-2132e07eaa6b"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "88469a31-5773-4336-a5d5-6219f39d9896"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Read Coils",
+              "targetStep": "/api/3/workflow_steps/22340f3d-b5f5-477f-8fb8-2132e07eaa6b",
+              "sourceStep": "/api/3/workflow_steps/88469a31-5773-4336-a5d5-6219f39d9896",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "420a3f70-275f-4ddf-a443-f48d59ec76fa"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "fe6f0268-7155-404f-8e0d-6ae8c2feb8dd",
+          "id": 1072,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "modbus"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "modbus"
+  ]
+}
